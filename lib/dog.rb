@@ -69,7 +69,7 @@ class Dog
     SELECT *FROM dogs WHERE id = ?
     SQL
     info = DB[:conn].execute(sql, id)
-    info[0]
+    info
   end
   
   
