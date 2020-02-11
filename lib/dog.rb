@@ -51,7 +51,8 @@ class Dog
   end
   
   def self.find_or_create_by(name:, breed:)
-    sql = <<-
+    sql = <<-SQL
+    
     dog = DB[:conn].execute( "SELECT * FROM dogs WHERE name = ? AND breed = ? LIMIT 1", name, breed)
     if !dog.empty?
       dog_info = dog[0]
